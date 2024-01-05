@@ -1,0 +1,59 @@
+#######################################
+# Syntax Coloring Map
+#######################################
+# https://spencer.bliven.us/index.php/2012/01/18/arduino-ide-keywords/
+# KEYWORD1 Classes, datatypes, and C++ keywords
+# KEYWORD2 Methods and functions
+# KEYWORD3 setup and loop functions, as well as the Serial keywords
+# LITERAL1 Constants
+# LITERAL2 Built-in variables (unused by default)
+
+
+#######################################
+# Classes, datatypes (KEYWORD1)
+#######################################
+ScioSense_ens16x				KEYWORD1
+ENS160							KEYWORD1
+ens160							KEYWORD1
+ENS161							KEYWORD1
+ens161							KEYWORD1
+Configuration					KEYWORD1
+DeviceStatus					KEYWORD1
+Result							KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin							KEYWORD2
+isConnected						KEYWORD2
+
+update							KEYWORD2
+reset							KEYWORD2
+startStandardMeasure			KEYWORD2
+startLowPowerMeasure			KEYWORD2
+startUltraLowPowerMeasure		KEYWORD2
+writeCompensation				KEYWORD2
+writeConfiguration				KEYWORD2
+
+wait							KEYWORD2
+waitInterrupt					KEYWORD2
+waitPolled						KEYWORD2
+getAirQualityIndex_UBA			KEYWORD2
+getAirQualityIndex_ScioSense	KEYWORD2
+getEco2							KEYWORD2
+getTvoc							KEYWORD2
+getRs0							KEYWORD2
+getRs1							KEYWORD2
+getRs2							KEYWORD2
+getRs3							KEYWORD2
+getDeviceStatus					KEYWORD2
+getFirmwareVersion				KEYWORD2
+setInterruptPin					KEYWORD2
+
+enableDebugging					KEYWORD2
+disableDebugging				KEYWORD2
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
