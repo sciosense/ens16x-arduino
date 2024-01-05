@@ -10,7 +10,7 @@ using namespace ScioSense;
 I2cInterface i2c;
 
 #define USE_INTERRUPT
-#define INTN PIND2
+#define INTN 2
 
 ENS160 ens160;
 
@@ -47,24 +47,26 @@ void loop()
 {
      ens160.wait();
 
+     // Enable Tools->Serial Plotter to see the sensor output as a graph
+
      if (ens160.update() == ENS16x::Result::Ok)
      {
         if (hasFlag(ens160.getDeviceStatus(), ENS16x::DeviceStatus::NewData))
         {
-            Serial.print("AQI UBA   : "); Serial.println((uint8_t)ens160.getAirQualityIndex_UBA());
+            Serial.print("AQI UBA:"); Serial.print((uint8_t)ens160.getAirQualityIndex_UBA());
 
-            Serial.print("TVOC      : "); Serial.println(ens160.getTvoc());
-            Serial.print("ECO2      : "); Serial.println(ens160.getEco2());
+            Serial.print("\tTVOC:"); Serial.print(ens160.getTvoc());
+            Serial.print("\tECO2:"); Serial.println(ens160.getEco2());
         }
 
         if (hasFlag(ens160.getDeviceStatus(), ENS16x::DeviceStatus::NewGeneralPurposeData))
         {
-            Serial.print("RS0       : "); Serial.println(ens160.getRs0());
-            Serial.print("RS1       : "); Serial.println(ens160.getRs1());
-            Serial.print("RS2       : "); Serial.println(ens160.getRs2());
-            Serial.print("RS3       : "); Serial.println(ens160.getRs3());
+            Serial.print("RS0:"); Serial.print(ens160.getRs0());
+            Serial.print("\tRS1:"); Serial.print(ens160.getRs1());
+            Serial.print("\tRS2:"); Serial.print(ens160.getRs2());
+            Serial.print("\tRS3:"); Serial.println(ens160.getRs3());
         }
 
-        Serial.println("");
+        
      }
 }
