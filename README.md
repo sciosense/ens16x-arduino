@@ -1,7 +1,7 @@
 # ScioSense ENS16x Arduino Library
 Arduino library for the ENS16x digital four channel MOX gas sensors with I2C interface from ScioSense.
 
-<img src="images/ens16x.png" width="1000">
+<img src="images/ens16x.png" width="400">
 
 ENS16x is a range of digital multi-gas metal oxide (MOX) sensors, specifically designed for indoor air quality 
 monitoring, offering an unrivalled wealth of fully-processed outputs including low-power operating modes.
