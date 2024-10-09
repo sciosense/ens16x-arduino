@@ -11,6 +11,8 @@ I2cInterface i2c;
 
 #define USE_INTERRUPT
 #define INTN 2
+#define I2C_SDA 21
+#define I2C_SCL 22
 
 ENS160 ens160;
 
@@ -19,7 +21,7 @@ void setup()
     Serial.begin(9600);
     ens160.enableDebugging(Serial);
 
-    Wire.begin();
+    Wire.begin(I2C_SDA,I2C_SCL,0);
     i2c.begin(Wire, I2C_ADDRESS);
 
     Serial.println("begin..");
