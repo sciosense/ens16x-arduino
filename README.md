@@ -63,6 +63,7 @@ To build an example sketch
  - (Re)start Arduino.
  - Open File > Example > Examples from Custom Libraries > ScioSense_ENS16x > 01_Basic (or any other of the provided examples you wish to run)
  - Make sure Tools > Board lists the correct board.
+ - Make sure the GPIOs for I2C on the ESP32 (I2C_SDA and I2C_SCL) in use are correct.
  - Select Sketch > Verify/Compile.
 
 ## Acknowledgements

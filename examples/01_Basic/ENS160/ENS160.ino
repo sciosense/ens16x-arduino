@@ -1,3 +1,4 @@
+// wanring: before usage please make sure the GPIOs for I2C on the ESP32 (I2C_SDA and I2C_SCL) in use are correct.
 #include <Arduino.h>
 #include <Wire.h>
 #include <ScioSense_ENS16x.h>
