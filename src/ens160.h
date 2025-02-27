@@ -3,22 +3,18 @@
 
 #include "ens16x.h"
 
-namespace ScioSense
+class ENS160 : public ENS16x
 {
-    class ENS160 : public ENS16x
+public:
+    ENS160() : ENS16x()
     {
-    public:
-        ENS160() : ENS16x()
-        {
-            debugPrefix = "ENS160 debug -- ";
-        }
+        debugPrefix = "ENS160 debug -- ";
+    }
 
-        bool isConnected() override
-        {
-            debug("part id:", partId);
-            return partId == 0x0160;
-        }
-    };
-}
+    bool isConnected() override
+    {
+        return Ens160_IsConnected(this);
+    }
+};
 
 #endif //SCIOSENSE_ENS160_H

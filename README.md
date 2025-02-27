@@ -8,7 +8,7 @@ monitoring, offering an unrivalled wealth of fully-processed outputs including l
 
 ## Links
 * [ENS160 Datasheet](https://www.sciosense.com/wp-content/uploads/2023/12/ENS160-Datasheet.pdf)
-* [ENS161 Datasheet](https://www.sciosense.com/wp-content/uploads/2023/12/ENS161-Datasheet.pdf)
+* [ENS161 Datasheet](https://www.sciosense.com/wp-content/uploads/2024/12/ENS161-Datasheet.pdf)
 * [Further information about the ENS16x family](https://www.sciosense.com/ens16x-digital-metal-oxide-multi-gas-sensor-family/)
 * Buy the ENS161 on [Mouser](https://mou.sr/3NSRp0K) or [another distributor](https://www.sciosense.com/contact/)
 * Buy the ENS161 evaluation kit on [Mouser](https://mou.sr/3vxi5xJ) or [another distributor](https://www.sciosense.com/contact/)
