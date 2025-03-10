@@ -12,7 +12,7 @@ typedef struct ScioSense_Arduino_Ens220_Spi_Config
     SPISettings settings;
 } ScioSense_Arduino_Ens220_Spi_Config;
 
-inline int8_t ScioSense_Arduino_Spi_Read(void* config, const uint16_t address, uint8_t* data, const size_t size)
+static inline int8_t ScioSense_Arduino_Spi_Read(void* config, const uint16_t address, uint8_t* data, const size_t size)
 {
     ScioSense_Arduino_Ens220_Spi_Config* _config = ((ScioSense_Arduino_Ens220_Spi_Config*)config);
 
@@ -39,7 +39,7 @@ inline int8_t ScioSense_Arduino_Spi_Read(void* config, const uint16_t address, u
     return 0; // RESULT_OK;
 }
 
-inline int8_t ScioSense_Arduino_Spi_Write(void* config, const uint16_t address, uint8_t* data, const size_t size)
+static inline int8_t ScioSense_Arduino_Spi_Write(void* config, const uint16_t address, uint8_t* data, const size_t size)
 {
     ScioSense_Arduino_Ens220_Spi_Config* _config = ((ScioSense_Arduino_Ens220_Spi_Config*)config);
 
@@ -66,7 +66,7 @@ inline int8_t ScioSense_Arduino_Spi_Write(void* config, const uint16_t address, 
     return 0; // RESULT_OK;
 }
 
-inline void ScioSense_Arduino_Spi_Wait(uint32_t ms)
+static inline void ScioSense_Arduino_Spi_Wait(uint32_t ms)
 {
     delay(ms);
 }

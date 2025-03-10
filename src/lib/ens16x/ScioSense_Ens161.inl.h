@@ -4,27 +4,27 @@
 #include "ScioSense_Ens161.h"
 
 
-inline Result Ens161_StartLowPowerMeasure(ScioSense_Ens16x* ens16x)
+static inline Result Ens161_StartLowPowerMeasure(ScioSense_Ens16x* ens16x)
 {
     return Ens16x_SetOperatingMode(ens16x, ENS161_OPERATING_MODE_LOWPOWER);
 }
 
-inline Result Ens161_StartUltraLowPowerMeasure(ScioSense_Ens16x* ens16x)
+static inline Result Ens161_StartUltraLowPowerMeasure(ScioSense_Ens16x* ens16x)
 {
     return Ens16x_SetOperatingMode(ens16x, ENS161_OPERATING_MODE_ULTRALOWPOWER);
 }
 
-inline bool Ens161_IsConnected(ScioSense_Ens16x* ens16x)
+static inline bool Ens161_IsConnected(ScioSense_Ens16x* ens16x)
 {
     return ens16x->partId == 0x161;
 }
 
-inline uint16_t  Ens161_GetAirQualityIndex_ScioSense(ScioSense_Ens16x* ens16x)
+static inline uint16_t  Ens161_GetAirQualityIndex_ScioSense(ScioSense_Ens16x* ens16x)
 {
     return (ens16x->dataBuffer[ENS161_BUFFER_INFO_AQIS_INDEX + 1] << 8) + ens16x->dataBuffer[ENS161_BUFFER_INFO_AQIS_INDEX];
 }
 
-inline Result Ens161_Wait(ScioSense_Ens16x* ens16x)
+static inline Result Ens161_Wait(ScioSense_Ens16x* ens16x)
 {
     switch (ens16x->operatingMode)
     {

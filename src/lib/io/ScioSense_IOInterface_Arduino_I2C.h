@@ -12,7 +12,7 @@ typedef struct ScioSense_Arduino_I2c_Config
     unsigned char address;
 } ScioSense_Arduino_I2c_Config;
 
-inline int8_t ScioSense_Arduino_I2c_Read(void* config, const uint16_t address, uint8_t* data, const size_t size)
+static inline int8_t ScioSense_Arduino_I2c_Read(void* config, const uint16_t address, uint8_t* data, const size_t size)
 {
     const uint8_t MAX_CHUNK_SIZE= 32;
     TwoWire* wire               = ((ScioSense_Arduino_I2c_Config*)config)->wire;
@@ -46,7 +46,7 @@ inline int8_t ScioSense_Arduino_I2c_Read(void* config, const uint16_t address, u
     return 1; // RESULT_IO_ERROR;
 }
 
-inline int8_t ScioSense_Arduino_I2c_Write(void* config, const uint16_t address, uint8_t* data, const size_t size)
+static inline int8_t ScioSense_Arduino_I2c_Write(void* config, const uint16_t address, uint8_t* data, const size_t size)
 {
 
     TwoWire* wire               = ((ScioSense_Arduino_I2c_Config*)config)->wire;
@@ -63,7 +63,7 @@ inline int8_t ScioSense_Arduino_I2c_Write(void* config, const uint16_t address, 
     return 1; // RESULT_IO_ERROR;
 }
 
-inline void ScioSense_Arduino_I2c_Wait(uint32_t ms)
+static inline void ScioSense_Arduino_I2c_Wait(uint32_t ms)
 {
     delay(ms);
 }

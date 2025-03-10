@@ -18,11 +18,11 @@
 #define ENS161_BUFFER_INFO_AQIS_INDEX                      (ENS161_REGISTER_ADDRESS_DATA_AQIS    - ENS16X_REGISTER_ADDRESS_DATA_AQI)
 
 
-Result      Ens161_StartLowPowerMeasure         (ScioSense_Ens16x* ens16x);         // Starts the LOW POWER operating mode.
-Result      Ens161_StartUltraLowPowerMeasure    (ScioSense_Ens16x* ens16x);         // Starts the ULTRA LOW POWER operating mode.
+static inline Result      Ens161_StartLowPowerMeasure         (ScioSense_Ens16x* ens16x);         // Starts the LOW POWER operating mode.
+static inline Result      Ens161_StartUltraLowPowerMeasure    (ScioSense_Ens16x* ens16x);         // Starts the ULTRA LOW POWER operating mode.
 
-bool        Ens161_IsConnected                  (ScioSense_Ens16x* ens16x);         // Tests whether a device is connected; returns true if ReadPartId() returned 0x161
-uint16_t    Ens161_GetAirQualityIndex_ScioSense (ScioSense_Ens16x* ens16x);         // Calculate and return the Relative Air Quality Index according to ScioSense
+static inline bool        Ens161_IsConnected                  (ScioSense_Ens16x* ens16x);         // Tests whether a device is connected; returns true if ReadPartId() returned 0x161
+static inline uint16_t    Ens161_GetAirQualityIndex_ScioSense (ScioSense_Ens16x* ens16x);         // Calculate and return the Relative Air Quality Index according to ScioSense
 
 #include "ScioSense_Ens161.inl.h"
 #endif // SCIOSENSE_ENS161_C_H
