@@ -47,9 +47,9 @@ to the onboard LDO.
 
 ### Example with ESP32
 This example shows how to wire a [ESP32DevKitC](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/hw-reference/esp32/get-started-devkitc.html#get-started-esp32-devkitc-board-front) 
-with the ENS220 breakout board for I2C communication.
+with the ENS16x breakout board for I2C communication.
 
-| ENS220 breakout board | ESP32 |
+| ENS16x breakout board | ESP32 |
 |:---------------------:|:-----:|
 |          VDD          |  3V3  |
 |          GND          |  GND  |
