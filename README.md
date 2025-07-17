@@ -1,5 +1,5 @@
 # ScioSense ENS16x Arduino Library
-Arduino library for the ENS16x digital four channel MOX gas sensors with I2C interface from ScioSense.
+Arduino library for the ENS16x digital four channel MOX gas sensors with I2C/SPI interface from ScioSense.
 
 <img src="images/ens16x.png" width="400">
 
@@ -43,9 +43,9 @@ For the installation of the ESP32 in the Arduino IDE, see [Arduino ESP32 Install
 Please make sure that you use the correct supply voltage:
 - The ENS16x runs at VDD = 1.8 V. If you are using the Sciosense ENS16x breakout board, you can use VDD = 3.3 V thanks
 to the onboard LDO. 
-- The I2C communication is 3.3 V tolerant.
+- The I2C/SPI communication is 3.3 V tolerant.
 
-### Example with ESP32
+### I²C example with ESP32
 This example shows how to wire a [ESP32DevKitC](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/hw-reference/esp32/get-started-devkitc.html#get-started-esp32-devkitc-board-front) 
 with the ENS16x breakout board for I2C communication.
 
@@ -56,7 +56,22 @@ with the ENS16x breakout board for I2C communication.
 |          SDA          |  G21  |
 |          SCL          |  G22  |
 
-<img src="images/ens16x_pin_out_esp32.png" width="1000">
+<img src="images/ESP32_I2C.png" width="1000">
+
+### SPI example with ESP32
+This example shows how to wire a [ESP32DevKitC](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/hw-reference/esp32/get-started-devkitc.html#get-started-esp32-devkitc-board-front) 
+with the ENS16x breakout board for SPI communication. Make sure you modify the evaluation board by opening solderbridge J3 according application note [SC-002530-AN](www.sciosense.com/wp-content/uploads/2025/02/ENS160-ENS161-Evaluation-Board-Application-Note.pdf).
+
+| ENS16x breakout board | ESP32 |
+|:---------------------:|:-----:|
+|          VDD          |  3V3  |
+|          GND          |  GND  |
+|          MOSI         |  G23  |
+|          MISO         |  G19  |
+|          SCK          |  G18  |
+|          CS           |  G05  |
+
+<img src="images/ESP32_SPI.png" width="1000">
 
 ## Build an example
 To build an example sketch
@@ -69,5 +84,3 @@ To build an example sketch
 This library is developed for ScioSense by [at² GmbH](https://www.at2-software.com/en/) 
 
 @at2software
-
-### ScioSense is a Joint Venture of ams AG
