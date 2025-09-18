@@ -90,6 +90,19 @@ Result ENS16x::startStandardMeasure()
     return setOperatingMode(ENS16X_OPERATING_MODE_STANDARD);
 }
 
+Result ENS16x::startIDLEMode()
+{
+    return setOperatingMode(ENS16X_OPERATING_MODE_IDLE);
+}
+
+Result ENS16x::startDeepSleepMode()
+{
+    return setOperatingMode(ENS16X_OPERATING_MODE_DEEP_SLEEP);
+}
+
+
+
+
 Result ENS16x::writeCompensation(const uint16_t& temperature, const uint16_t& relativeHumidity)
 {
     return Ens16x_WriteCompensation(this, temperature, relativeHumidity);

@@ -4,62 +4,66 @@
 
 #define I2C_ADDRESS 0x52
 
-#define USE_INTERRUPT
+// #define USE_INTERRUPT		// enable in case you're using a dedicated interrupt pin
 #define INTN 2
 
-ENS161 ens161;
+ENS161 ens16x;
 
-void setup()
-{
+void setup() {
     Serial.begin(9600);
-    ens161.enableDebugging(Serial);
+    ens16x.enableDebugging(Serial);
 
     Wire.begin();
-    ens161.begin(&Wire, I2C_ADDRESS);
+    ens16x.begin(&Wire, I2C_ADDRESS);
 
     Serial.println("begin..");
-    while (ens161.init() != true)
-    {
+    while (ens16x.init() != true) {
         Serial.print(".");
         delay(1000);
     }
     Serial.println("success");
 
 #ifdef USE_INTERRUPT
-    ens161.setInterruptPin(INTN);
-    ens161.writeConfiguration
-    (
-          ENS16X_CONFIGURATION_INTERRUPT_ENABLE
-        | ENS16X_CONFIGURATION_NEW_GENERAL_PURPOSE_DATA
-        | ENS16X_CONFIGURATION_NEW_DATA
-    );
+    ens16x.setInterruptPin(INTN);
+    ens16x.writeConfiguration(
+      ENS16X_CONFIGURATION_INTERRUPT_ENABLE
+      | ENS16X_CONFIGURATION_NEW_GENERAL_PURPOSE_DATA
+      | ENS16X_CONFIGURATION_NEW_DATA);
 #endif
 
-    ens161.startStandardMeasure();
+
+    // select one operating mode
+    ens16x.startStandardMeasure();
+    //ens16x.startLowPowerMeasure();
+    //ens16x.startUltraLowPowerMeasure();
 }
 
-void loop()
-{
-     ens161.wait();
+void loop() {
+    ens16x.wait();
 
-     // Enable Tools->Serial Plotter to see the sensor output as a graph
+    // Enable Tools->Serial Plotter to see the sensor output as a graph
 
-     if (ens161.update() == RESULT_OK)
-     {
-        if (ens161.hasNewData())
-        {
-            Serial.print("AQI UBA:"); Serial.print((uint8_t)ens161.getAirQualityIndex_UBA());
-
-            Serial.print("\tTVOC:"); Serial.print(ens161.getTvoc());
-            Serial.print("\tECO2:"); Serial.println(ens161.getEco2());
+    if (ens16x.update() == RESULT_OK) {
+        if (ens16x.hasNewData()) {
+            Serial.print("AQI-U:");
+            Serial.print((uint8_t)ens16x.getAirQualityIndex_UBA());
+            Serial.print("\tAQI-S:");
+            Serial.print((uint8_t)ens16x.getAirQualityIndex_ScioSense());
+            Serial.print("\tTVOC:");
+            Serial.print(ens16x.getTvoc());
+            Serial.print("\tECO2:");
+            Serial.println(ens16x.getEco2());
         }
 
-        if (ens161.hasNewGeneralPurposeData())
-        {
-            Serial.print("RS0:"); Serial.print(ens161.getRs0());
-            Serial.print("\tRS1:"); Serial.print(ens161.getRs1());
-            Serial.print("\tRS2:"); Serial.print(ens161.getRs2());
-            Serial.print("\tRS3:"); Serial.println(ens161.getRs3());
+        if (ens16x.hasNewGeneralPurposeData()) {
+            Serial.print("RS0:");
+            Serial.print(ens16x.getRs0());
+            Serial.print("\tRS1:");
+            Serial.print(ens16x.getRs1());
+            Serial.print("\tRS2:");
+            Serial.print(ens16x.getRs2());
+            Serial.print("\tRS3:");
+            Serial.println(ens16x.getRs3());
         }
-     }
+    }
 }

@@ -32,6 +32,8 @@ public:
     inline Result update();                                                                         // Checks the device Status for NEWDAT and NEWGPR; Reads Data if flags are set.
     inline Result reset();                                                                          // Device reset to the power-on configuration.
     inline Result startStandardMeasure();                                                           // Starts the STANDARD operating mode.
+    inline Result startIDLEMode();                                                                  // Starts the IDLE mode.
+    inline Result startDeepSleepMode();                                                             // Starts the DEEP SLEEP mode.
     inline Result writeCompensation(const uint16_t& temperature, const uint16_t& relativeHumidity); // Writes ambient temperature and relative humidity data for compensation.
     inline Result writeConfiguration(const Ens16x_Configuration& configuration);                    // Writes configuration data.
 
