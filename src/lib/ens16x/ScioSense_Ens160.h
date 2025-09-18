@@ -3,6 +3,7 @@
 
 #include "ScioSense_Ens160_defines.h"
 
+#include <stddef.h>
 #include <stdbool.h>
 #include <inttypes.h>
 
