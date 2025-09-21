@@ -214,7 +214,7 @@ uint8_t* ENS16x::getDataRaw()
 
 void ENS16x::setInterruptPin(int p)
 {
-    pinMode(p, INPUT);
+    pinMode(p, INPUT_PULLUP);
     interruptPin = p;
 }
 
